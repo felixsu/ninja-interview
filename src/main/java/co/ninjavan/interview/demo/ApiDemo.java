@@ -9,7 +9,7 @@ import co.ninjavan.interview.api.HttpClient;
 public class ApiDemo {
 
     public static void main(String[] args) {
-
+        System.out.println("Run Api Demo");
         HttpClient client = null;
         // continue the code
     }
