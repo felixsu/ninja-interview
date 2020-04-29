@@ -8,4 +8,14 @@ public interface Appium {
 
     void click(MobileElement el);
 
+    void sendKeys(MobileElement el, String stringValue);
+
+    void sendKeysThenEnter(MobileElement el, String stringValue);
+
+    void clearFieldThenSendKeys(MobileElement el, String stringValue);
+
+    void waitUntilVisibilityOfElementLocated();
+
+    void waitUntilInvisibilityOfElementLocated();
+
 }
