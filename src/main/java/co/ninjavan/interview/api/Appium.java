@@ -1,21 +1,57 @@
 package co.ninjavan.interview.api;
 
 import io.appium.java_client.MobileElement;
+import org.openqa.selenium.NotFoundException;
 
 public interface Appium {
 
     void goToActivity(String activityName);
 
+    /**
+     * perform click action to the element
+     * @param el any element
+     */
     void click(MobileElement el);
 
+    /**
+     * type string into the element
+     * @param el input element
+     * @param stringValue string to be typed into the input element
+     */
     void sendKeys(MobileElement el, String stringValue);
 
+    /**
+     * @see #sendKeys(MobileElement, String)
+     * but press new line key after it finished the string input
+     * @param el input element
+     * @param stringValue string to be typed into the input element
+     */
     void sendKeysThenEnter(MobileElement el, String stringValue);
 
+    /**
+     * @see #sendKeys(MobileElement, String)
+     * but with clear the input element in before perform any input
+     * @param el input element
+     * @param stringValue string to be typed into the input element
+     */
     void clearFieldThenSendKeys(MobileElement el, String stringValue);
 
-    void waitUntilVisibilityOfElementLocated();
+    /**
+     * finish the block until element is visibility is true
+     * @param el input element
+     */
+    void waitUntilVisibilityOfElementLocated(MobileElement el);
 
-    void waitUntilInvisibilityOfElementLocated();
+    /**
+     * finish the block until element is visibility is false
+     * @param el input element
+     */
+    void waitUntilInvisibilityOfElementLocated(MobileElement el);
+
+    /**
+     * scroll down the screen until specific text is appeared
+     * @param text string in element to be found.
+     */
+    void scrollUntilTextFound(String text);
 
 }
