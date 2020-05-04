@@ -39,12 +39,12 @@ public class AppiumImpl implements Appium {
 
     @Override
     public void waitUntilVisibilityOfElementLocated(MobileElement el) {
-
+        throw new UnsupportedOperationException();
     }
 
     @Override
     public void waitUntilInvisibilityOfElementLocated(MobileElement el) {
-
+        throw new UnsupportedOperationException();
     }
 
 }
