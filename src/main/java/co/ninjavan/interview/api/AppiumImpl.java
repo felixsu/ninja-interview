@@ -47,4 +47,9 @@ public class AppiumImpl implements Appium {
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public void scrollUntilTextFound(String text) {
+        throw new UnsupportedOperationException();
+    }
+
 }

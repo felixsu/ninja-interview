@@ -1,6 +1,7 @@
 package co.ninjavan.interview.api;
 
 import io.appium.java_client.MobileElement;
+import org.openqa.selenium.NotFoundException;
 
 public interface Appium {
 
@@ -46,5 +47,11 @@ public interface Appium {
      * @param el input element
      */
     void waitUntilInvisibilityOfElementLocated(MobileElement el);
+
+    /**
+     * scroll down the screen until specific text is appeared
+     * @param text string in element to be found.
+     */
+    void scrollUntilTextFound(String text);
 
 }
