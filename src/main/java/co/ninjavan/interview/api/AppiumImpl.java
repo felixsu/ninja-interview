@@ -22,4 +22,29 @@ public class AppiumImpl implements Appium {
         throw new UnsupportedOperationException();
     }
 
+    @Override
+    public void sendKeys(MobileElement el, String stringValue) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void sendKeysThenEnter(MobileElement el, String stringValue) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void clearFieldThenSendKeys(MobileElement el, String stringValue) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public void waitUntilVisibilityOfElementLocated(MobileElement el) {
+
+    }
+
+    @Override
+    public void waitUntilInvisibilityOfElementLocated(MobileElement el) {
+
+    }
+
 }
