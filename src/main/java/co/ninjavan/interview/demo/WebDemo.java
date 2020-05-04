@@ -1,7 +1,8 @@
 package co.ninjavan.interview.demo;
 
 /**
- * please open the page http://xxx.com,  use created
+ * Objective:
+ * Open the page http://tbd.com,  use created
  * {@link co.ninjavan.interview.api.Selenium} and do
  * - action 1
  * - action 2
