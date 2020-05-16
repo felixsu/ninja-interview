@@ -1,8 +1,14 @@
 package co.ninjavan.interview.api;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public interface Selenium {
+
+    /**
+     * this method is to init webdriver
+     */
+    void init(WebDriver driver);
 
     /**
      * this method is to change active tab
