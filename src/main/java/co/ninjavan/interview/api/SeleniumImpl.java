@@ -2,13 +2,17 @@ package co.ninjavan.interview.api;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class SeleniumImpl implements Selenium {
 
-    private final WebDriver driver;
+    @FindBy(xpath = "//input[@name='q']")
+    private static WebElement searchField;
 
-    public SeleniumImpl(WebDriver driver) {
-        this.driver = driver;
+    @Override
+    public void init(final WebDriver selenium) {
+        PageFactory.initElements(selenium, this);
     }
 
     @Override
@@ -27,13 +31,28 @@ public class SeleniumImpl implements Selenium {
     }
 
     @Override
-    public void fill(WebElement el, String stringValue) {
-        throw new UnsupportedOperationException();
+    public void fill(WebElement el, String stringValue) throws Exception {
+
+        try {
+            searchField.sendKeys(stringValue);
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+            throw new Exception("The input field was not found", e);
+        }
     }
 
     @Override
     public void clearField(WebElement el) {
-        throw new UnsupportedOperationException();
+
+        try {
+            searchField.clear();
+        }
+        catch(Exception e) {
+            e.printStackTrace();
+            throw new Exception("The input field was not found", e);
+        }
+
     }
 
     @Override

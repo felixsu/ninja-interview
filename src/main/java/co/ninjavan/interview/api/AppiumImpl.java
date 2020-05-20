@@ -3,12 +3,15 @@ package co.ninjavan.interview.api;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.WebElement;
+import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.nativekey.AndroidKey;
+import io.appium.java_client.android.nativekey.KeyEvent;
 
 public class AppiumImpl implements Appium {
 
-    private final AndroidDriver<WebElement> androidDriver;
+    private AndroidDriver<WebElement> androidDriver;
 
-    public AppiumImpl(AndroidDriver<WebElement> androidDriver) {
+    public AppiumImpl(final AndroidDriver<AndroidElement> androidDriver) {
         this.androidDriver = androidDriver;
     }
 
@@ -24,7 +27,19 @@ public class AppiumImpl implements Appium {
 
     @Override
     public void sendKeys(MobileElement el, String stringValue) {
-        throw new UnsupportedOperationException();
+
+        el.sendKeys(stringValue);
+
+    }
+
+    @Override
+    public boolean isElementInvisible(By el) {
+        return isExpectedCondition(ExpectedConditions.invisibilityOfElementLocated(el));
+    }
+
+    @Override
+    public boolean isElementInvisible(By el) {
+        return isExpectedCondition(ExpectedConditions.invisibilityOfElementLocated(el));
     }
 
     @Override

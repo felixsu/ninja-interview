@@ -24,7 +24,16 @@ public class DbDemo {
     private static void task1() {
         System.out.println("task 1");
 
+        String sql;
 
+        sql = "SELECT students.name, score.score FROM students,score \n" +
+                "WHERE students.id = score.student_id AND students.student_id_card = 'abcd123';";
+        /*
+        or
+         */
+
+        sql = "SELECT st.name, sc.score FROM students st INNER JOIN score sc ON st.id=sc.student_id \n" +
+                "WHERE st.student_id_card = 'abcd123';";
     }
 
     /**
@@ -41,6 +50,10 @@ public class DbDemo {
      */
     private static void task2() {
         System.out.println("task 2");
+
+        String sql = "SELECT st.name, sc.score FROM students st \n" +
+                "INNER JOIN score sc ON st.id=sc.student_id INNER JOIN student_presence sp ON st.id=sp.id \n" +
+                "WHERE sp.date = '2019-05-01';";
     }
 
 }
