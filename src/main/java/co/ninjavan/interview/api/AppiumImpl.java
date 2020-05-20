@@ -33,6 +33,16 @@ public class AppiumImpl implements Appium {
     }
 
     @Override
+    public boolean isElementInvisible(By el) {
+        return isExpectedCondition(ExpectedConditions.invisibilityOfElementLocated(el));
+    }
+
+    @Override
+    public boolean isElementInvisible(By el) {
+        return isExpectedCondition(ExpectedConditions.invisibilityOfElementLocated(el));
+    }
+
+    @Override
     public void sendKeysThenEnter(MobileElement el, String stringValue) {
         throw new UnsupportedOperationException();
     }
